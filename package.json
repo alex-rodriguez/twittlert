@@ -1,0 +1,15 @@
+{
+  "name": "twittlert",
+  "version": "1.0.0",
+  "description": "Get tweet alerts from certain users",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Alex Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "twit": "^2.2.11"
+  }
+}

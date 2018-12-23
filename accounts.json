@@ -1,0 +1,14 @@
+{
+  "configs": [
+    {
+      "name": "Metro Madrid",
+      "id": "182764833",
+      "keywords": ["averia", "paros", "circulacion lenta", "circulacion interrumpida", "circulacion normalizada"]
+    },
+    {
+      "name": "DGT info",
+      "id": "974022020",
+      "keywords": ["#A6", "#A5"]
+    }
+  ]
+}
