@@ -26,10 +26,23 @@ const twit = new Twit({
 
 // Sends DM to you
 const sendDM = tweet => {
-  twit.post("direct_messages/new", {
-    user_id: process.env.USER_ID,
-    text: `Twittlert alert! user: ${tweet.user.name} (@${tweet.user.screen_name}) message: ${tweet.text}`
-  });
+  twit.post(
+    "direct_messages/events/new",
+    {
+      "event":
+      {
+        "type": "message_create", 
+        "message_create": 
+          {
+            "target": {"recipient_id": process.env.USER_ID},
+            "message_data": {"text": `[Twittlert] ${tweet.user.name} (@${tweet.user.screen_name}): ${tweet.text}`}
+          }
+      }
+    },
+    function(err,data,response){
+      console.log(`${tweet.user.name} : ${tweet.text}`)
+    }
+  );
 }
 
 var accountIds = Object.keys(keywordsByAccount)
@@ -42,9 +55,7 @@ stream.on('tweet', (tweet) => {
       keywordsByAccount[tweet.user.id_str].forEach(keyword => {
         const normalizedTweet = normalizeText(tweet.text)
   
-        if (normalizedTweet.includes(keyword)){
-          console.log(`${tweet.user.name} : ${tweet.text}`)
-          // Send DM to alert you
+        if (normalizedTweet.includes(keyword)){         
           sendDM(tweet)
         }
       })
