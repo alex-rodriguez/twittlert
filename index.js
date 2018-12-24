@@ -51,13 +51,15 @@ var stream = twit.stream('statuses/filter', {follow: accountIds})
 stream.on('tweet', (tweet) => {
   if (accountIds.includes(tweet.user.id_str)){
     const keywords = keywordsByAccount[tweet.user.id_str]
+
     if (keywords.length > 0){
-      keywordsByAccount[tweet.user.id_str].forEach(keyword => {
+      keywordsByAccount[tweet.user.id_str].some(keyword => {
         const normalizedTweet = normalizeText(tweet.text)
   
         if (normalizedTweet.includes(keyword)){         
           sendDM(tweet)
-        }
+          return true
+        }       
       })
     }
     else{
