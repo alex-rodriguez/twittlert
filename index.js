@@ -2,6 +2,7 @@ const Twit = require('twit')
 const fs = require('fs');
 require('dotenv').config()
 
+console.log("Worker starting...");
 // Converts to upper case and removes diacritics.
 const normalizeText = text => {
   return text.toUpperCase().
