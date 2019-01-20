@@ -3,12 +3,17 @@
     {
       "name": "Metro Madrid",
       "id": "182764833",
-      "keywords": ["averia", "paros", "circulacion lenta", "circulacion interrumpida", "circulacion normalizada"]
+      "keywords": ["L10", "L3"]
     },
     {
-      "name": "DGT info",
-      "id": "974022020",
-      "keywords": ["#A6", "#A5"]
+      "name": "HTC Mania",
+      "id": "22401772",
+      "keywords": ["sorteo"]
+    },
+    {
+      "name": "Chollometro",
+      "id": "4663496243",
+      "keywords": ["sorteo"]
     }
   ]
 }
