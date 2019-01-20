@@ -4,6 +4,7 @@
   "description": "Get tweet alerts from certain users",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest"
   },
   "author": "Alex Rodriguez",
@@ -11,5 +12,8 @@
   "dependencies": {
     "dotenv": "^6.2.0",
     "twit": "^2.2.11"
+  },
+  "engines": {
+    "node": "9.10.1"
   }
 }
